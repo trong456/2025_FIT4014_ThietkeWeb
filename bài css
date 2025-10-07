@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bảng điểm</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    /* Thanh menu */
+    .menu {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 30px;
+      font-size: 16px;
+    }
+
+    /* Khối thông tin */
+    .info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    .info-box {
+      background-color: #e6f7ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      min-width: 120px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* Bảng điểm */
+    table {
+      width: 60%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Hộp thông báo và hỗ trợ */
+    .side-box {
+      position: absolute;
+      right: 100px;
+      top: 130px;
+      width: 120px;
+      border: 1px solid #999;
+      font-size: 15px;
+    }
+
+    .side-box .thongbao {
+      background-color: yellow;
+      padding: 10px;
+      border-bottom: 1px solid #999;
+    }
+
+    .side-box .hotro {
+      background-color: #cceeff;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="#">Trang chủ</a>
+    <a href="#">Bảng điểm</a>
+    <a href="#">Liên hệ</a>
+  </div>
+
+  <!-- Khối thông tin -->
+  <div class="info">
+    <div class="info-box">Sĩ số: 40</div>
+    <div class="info-box">Điểm cao: 9.5</div>
+    <div class="info-box">TB: 7.2</div>
+  </div>
+
+  <!-- Hộp thông báo & hỗ trợ -->
+  <div class="side-box">
+    <div class="thongbao">Thông báo</div>
+    <div class="hotro">Hỗ trợ</div>
+  </div>
+
+  <!-- Bảng điểm -->
+  <table>
+    <tr>
+      <th>Họ tên</th>
+      <th>Toán</th>
+      <th>Văn</th>
+    </tr>
+    <tr>
+      <td>Nguyễn An</td>
+      <td>9</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Trần Bình</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Lê Cường</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+
+</body>
+</html>
