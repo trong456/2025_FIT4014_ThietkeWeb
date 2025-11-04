@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trang cá nhân — Trọng | Đại học Đại Nam</title>
+  <meta name="description" content="Trang cá nhân của Trọng — sinh viên Công nghệ thông tin tại Đại học Đại Nam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0c66a7c.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --accent: #0ea5a4;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --radius: 14px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f0f9ff, #ffffff);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), #7dd3fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 28px;
+    }
+    h1 { margin: 0; font-size: 28px; }
+    p.lead { margin: 6px 0 0; color: var(--muted); }
+    nav { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    a.btn {
+      background: var(--card);
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--accent);
+      border: 1px solid rgba(14,165,164,0.12);
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    a.btn:hover { background: var(--accent); color: #fff; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+      margin-top: 22px;
+    }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill {
+      background: #ecfeff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--accent);
+      border: 1px solid rgba(14,165,164,0.2);
+    }
+
+    .proj { margin-top: 12px; }
+    .proj h3 { margin: 0; color: var(--accent); }
+    .proj p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+
+    footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">T</div>
+      <div>
+        <h1>Trọng — Sinh viên Đại học Đại Nam</h1>
+        <p class="lead">Mình đam mê <strong>lập trình</strong> và <strong>thiết kế web</strong>. Mục tiêu: trở thành nhà phát triển web chuyên nghiệp.</p>
+        <nav>
+          <a class="btn" href="#about">Giới thiệu</a>
+          <a class="btn" href="#projects">Dự án</a>
+          <a class="btn" href="#contact">Liên hệ</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section id="about" class="card">
+          <h2>Giới thiệu</h2>
+          <p>Xin chào! Mình là <strong>Trọng</strong>, sinh viên ngành <strong>Công nghệ thông tin</strong> tại <strong>Trường Đại học Đại Nam</strong>. Mình yêu thích khám phá công nghệ mới, thiết kế giao diện web và tối ưu trải nghiệm người dùng.</p>
+          <h3>Kỹ năng</h3>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Python</span>
+            <span class="skill">Git</span>
+            <span class="skill">Responsive Design</span>
+          </div>
+        </section>
+
+        <section id="projects" class="card">
+          <h2>Dự án</h2>
+          <div class="proj">
+            <h3>Website lớp học</h3>
+            <p>Trang giới thiệu lớp học với lịch, thành viên và tài liệu. Mình phụ trách giao diện và responsive.</p>
+          </div>
+          <div class="proj">
+            <h3>Hệ thống quản lý đồ án</h3>
+            <p>Prototype cho phép giảng viên và sinh viên quản lý đề tài, nộp file và phản hồi.</p>
+          </div>
+        </section>
+
+        <section id="contact" class="card">
+          <h2>Liên hệ</h2>
+          <p>Bạn có thể liên hệ với mình qua các nền tảng sau:</p>
+          <p>
+            <a href="https://facebook.com/trong.nguyen" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="mailto:trong@gmail.com" class="btn"><i class="fas fa-envelope"></i> Gmail</a>
+          </p>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Thông tin</h3>
+          <p><strong>Trường:</strong> Đại học Đại Nam</p>
+          <p><strong>Ngành:</strong> Công nghệ thông tin</p>
+          <p><strong>Sở thích:</strong> Lập trình, thiết kế web, khám phá công nghệ</p>
+          <p><strong>Liên kết cá nhân:</strong></p>
+          <p>
+            <a href="https://facebook.com/trong.nguyen" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="mailto:trong@gmail.com" class="btn"><i class="fas fa-envelope"></i> Gmail</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Trọng — Đại học Đại Nam
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
