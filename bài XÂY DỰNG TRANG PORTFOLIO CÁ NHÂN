@@ -202,13 +202,7 @@
   </section>
 
   <section>
-    <h2>🚀 Kỹ năng nổi bật</h2>
-    <div class="skills">
-      <div class="skill">HTML5 & CSS3</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Responsive Design</div>
-      <div class="skill">Thiết kế UI/UX</div>
-      <div class="skill">Teamwork & Communication</div>
+    <h2>🛠️ Kỹ năng & Công nghệ</h2>
       <div class="skill">Tư duy logic & sáng tạo</div>
     </div>
   </section>
@@ -267,3 +261,4 @@
   </footer>
 </body>
 </html>
+
