@@ -1,264 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trang cá nhân — Trọng | Đại học Đại Nam</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2e0c66a7c.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Trọng Đại Nam</title>
   <style>
-    :root {
-      --accent: #4f46e5;
-      --text: #0f172a;
-      --card: rgba(255, 255, 255, 0.8);
-      --muted: #475569;
-      --radius: 14px;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-    /* Nền gradient rực rỡ */
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: linear-gradient(120deg, #7dd3fc, #a78bfa, #f9a8d4);
-      background-size: 400% 400%;
-      animation: gradientShift 10s ease infinite;
-      position: relative;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1c1c1c, #2b2b2b);
+      color: #f0f0f0;
       overflow-x: hidden;
     }
 
-    /* Bong bóng ánh sáng */
-    .bubble {
-      position: absolute;
-      background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: float 10s infinite;
-    }
-
-    .bubble:nth-child(1) { width: 220px; height: 220px; top: 10%; left: 10%; animation-delay: 0s; }
-    .bubble:nth-child(2) { width: 300px; height: 300px; top: 50%; left: 70%; animation-delay: 3s; }
-    .bubble:nth-child(3) { width: 160px; height: 160px; top: 75%; left: 25%; animation-delay: 6s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); opacity: 0.6; }
-      50% { transform: translateY(-25px); opacity: 0.9; }
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .wrap {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 24px;
-      position: relative;
-      z-index: 2;
-    }
-
     header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: radial-gradient(circle at center, rgba(0, 188, 212, 0.15), transparent);
     }
 
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 32px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      border: 2px solid rgba(255,255,255,0.3);
+    header h1 {
+      font-size: 3.2rem;
+      color: #00bcd4;
+      text-shadow: 0 0 15px rgba(0,188,212,0.5);
+      animation: fadeInDown 2s ease;
     }
 
-    h1 { margin: 0; font-size: 30px; }
-    p.lead { margin: 6px 0 0; color: #f1f5f9; }
-
-    nav {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    a.btn {
-      background: var(--card);
-      padding: 8px 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: var(--accent);
-      border: 1px solid rgba(255,255,255,0.2);
-      font-weight: 600;
-      transition: all 0.25s;
-    }
-
-    a.btn:hover {
-      background: var(--accent);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 24px;
-      margin-top: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill {
-      background: #eef2ff;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--accent);
-      border: 1px solid rgba(99,102,241,0.2);
-    }
-
-    /* Form liên hệ */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
       margin-top: 10px;
+      animation: fadeInUp 2s ease;
     }
 
-    input, textarea {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid rgba(0,0,0,0.1);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 25px;
     }
 
-    textarea { resize: vertical; min-height: 80px; }
-
-    button {
-      background: var(--accent);
-      color: white;
+    h2 {
+      color: #00bcd4;
+      border-left: 5px solid #00bcd4;
+      padding-left: 12px;
       font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 14px;
-      cursor: pointer;
+      margin-bottom: 25px;
+      text-shadow: 0 0 8px rgba(0,188,212,0.3);
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+
+    .highlight {
+      color: #00bcd4;
+      font-weight: bold;
+    }
+
+    .skills, .links, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill, .project-card {
+      background: rgba(255,255,255,0.05);
+      padding: 15px 20px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
-    button:hover {
-      background: #4338ca;
-      transform: translateY(-2px);
+    .skill:hover, .project-card:hover {
+      background: #00bcd4;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .project-card {
+      width: calc(50% - 10px);
+      box-sizing: border-box;
+    }
+
+    .project-card h3 {
+      color: #00bcd4;
+      margin-top: 0;
+    }
+
+    .links a {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #00bcd4;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      background: #00bcd4;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
     }
 
     footer {
-      margin-top: 28px;
       text-align: center;
-      color: white;
-      font-size: 13px;
+      padding: 25px;
+      color: #999;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.05);
     }
 
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .project-card {
+        width: 100%;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
+  <header>
+    <h1>Xin chào, mình là Trọng 👋</h1>
+    <p>Sinh viên Trường Đại học Đại Nam | Đam mê công nghệ & lập trình</p>
+  </header>
 
-  <div class="wrap">
-    <header>
-      <div class="avatar">T</div>
-      <div>
-        <h1>Trọng — Sinh viên Đại học Đại Nam</h1>
-        <p class="lead">Đam mê lập trình và thiết kế web. Mục tiêu: trở thành lập trình viên chuyên nghiệp.</p>
-        <nav>
-          <a class="btn" href="#about">Giới thiệu</a>
-          <a class="btn" href="#projects">Dự án</a>
-          <a class="btn" href="#contact">Liên hệ</a>
-        </nav>
-      </div>
-    </header>
+  <section>
+    <h2>🧑‍💻 Giới thiệu bản thân</h2>
+    <p>
+      Mình là <span class="highlight">Trọng</span>, hiện đang học tại 
+      <span class="highlight">Trường Đại học Đại Nam</span>.
+      Mình yêu thích <span class="highlight">lập trình, công nghệ và sáng tạo giao diện web</span>.  
+      Đối với mình, mỗi dòng code là một phần của câu chuyện – nơi mình thể hiện ý tưởng và niềm đam mê với công nghệ.
+    </p>
+    <p>
+      Mình thích khám phá những điều mới, thử nghiệm ý tưởng khác biệt và không ngừng hoàn thiện bản thân qua từng dự án nhỏ.  
+      Ngoài học tập, mình thường tìm hiểu thêm về <span class="highlight">JavaScript, UI/UX,</span> và các công cụ thiết kế web hiện đại.
+    </p>
+  </section>
 
-    <div class="grid">
-      <main>
-        <section id="about" class="card">
-          <h2>Giới thiệu</h2>
-          <p>Mình là <strong>Trọng</strong>, sinh viên ngành <strong>Công nghệ thông tin</strong> tại <strong>Trường Đại học Đại Nam</strong>.  
-          Mình yêu thích lập trình web, thiết kế giao diện và luôn muốn tạo ra sản phẩm sáng tạo, thân thiện với người dùng.</p>
+  <section>
+    <h2>🎯 Mục tiêu nghề nghiệp</h2>
+    <p>
+      Trong tương lai, mình mong muốn trở thành một <span class="highlight">Front-end Developer</span> chuyên nghiệp,  
+      có thể tạo ra những trang web không chỉ đẹp mà còn tối ưu, thân thiện với người dùng.
+    </p>
+    <p>
+      Xa hơn, mình muốn học sâu hơn về <span class="highlight">AI trong thiết kế web</span> và 
+      <span class="highlight">phát triển ứng dụng tương tác</span> giúp nâng cao trải nghiệm người dùng.
+    </p>
+  </section>
 
-          <h3>Kỹ năng</h3>
-          <div class="skills">
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Python</span>
-            <span class="skill">Git</span>
-          </div>
-        </section>
-
-        <section id="projects" class="card">
-          <h2>Dự án</h2>
-          <p>• Website lớp học với giao diện hiện đại, dễ sử dụng.<br>
-             • Hệ thống quản lý đồ án cho sinh viên CNTT.<br>
-             • Portfolio cá nhân hiển thị kỹ năng và dự án.</p>
-        </section>
-
-        <section id="contact" class="card">
-          <h2>Liên hệ</h2>
-          <p>Bạn có thể kết nối với mình qua:</p>
-          <p>
-            <a href="https://facebook.com/trong.nguyen" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="mailto:trong@gmail.com" class="btn"><i class="fas fa-envelope"></i> Gmail</a>
-          </p>
-
-          <h3>Hoặc gửi tin nhắn trực tiếp:</h3>
-          <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Tin nhắn đã được gửi.');">
-            <input type="text" placeholder="Họ và tên" required>
-            <input type="email" placeholder="Email của bạn" required>
-            <textarea placeholder="Nội dung liên hệ..." required></textarea>
-            <button type="submit">Gửi liên hệ</button>
-          </form>
-        </section>
-      </main>
-
-      <aside>
-        <div class="card">
-          <h3>Thông tin nhanh</h3>
-          <p><strong>Trường:</strong> Đại học Đại Nam</p>
-          <p><strong>Ngành:</strong> Công nghệ thông tin</p>
-          <p><strong>Sở thích:</strong> Lập trình, thiết kế, nghe nhạc</p>
-        </div>
-      </aside>
+  <section>
+    <h2>🚀 Kỹ năng nổi bật</h2>
+    <div class="skills">
+      <div class="skill">HTML5 & CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Thiết kế UI/UX</div>
+      <div class="skill">Teamwork & Communication</div>
+      <div class="skill">Tư duy logic & sáng tạo</div>
     </div>
+  </section>
 
-    <footer>
-      © <span id="year"></span> Trọng — Đại học Đại Nam
-    </footer>
-  </div>
+  <section>
+    <h2>💼 Dự án tiêu biểu</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🌐 Website Cá Nhân</h3>
+        <p>Thiết kế và xây dựng trang web cá nhân với HTML, CSS, JavaScript.  
+           Giao diện tối, hiện đại, hiển thị tốt trên mọi thiết bị.</p>
+      </div>
+      <div class="project-card">
+        <h3>🛍️ Trang bán hàng mini</h3>
+        <p>Phát triển giao diện mô phỏng website thương mại điện tử với giỏ hàng, thanh toán, và tìm kiếm sản phẩm.</p>
+      </div>
+      <div class="project-card">
+        <h3>📊 Dashboard Quản lý</h3>
+        <p>Xây dựng bảng điều khiển quản lý thông tin người dùng, kết hợp biểu đồ và hiệu ứng động nhẹ.</p>
+      </div>
+      <div class="project-card">
+        <h3>🎨 Portfolio Animation</h3>
+        <p>Thiết kế giao diện web với hiệu ứng chữ chuyển động, nền gradient và bố cục sáng tạo.</p>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <section>
+    <h2>🌈 Sở thích cá nhân</h2>
+    <p>
+      Ngoài việc học, mình thích nghe nhạc, chỉnh sửa giao diện web và tìm hiểu về công nghệ mới.  
+      Đôi khi, mình dành thời gian đọc sách và sáng tạo ý tưởng mới cho các dự án nhỏ.
+    </p>
+  </section>
+
+  <section>
+    <h2>🔗 Liên kết cá nhân</h2>
+    <div class="links">
+      <a href="https://facebook.com/trong.nguyen" target="_blank">🌐 Facebook</a>
+      <a href="mailto:trong@gmail.com">✉️ Gmail</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>📬 Liên hệ với tôi</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Họ và tên" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="5" placeholder="Nội dung tin nhắn..." required></textarea>
+      <button type="submit">Gửi tin nhắn</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Trọng | Thiết kế & phát triển bởi chính mình 💙
+  </footer>
 </body>
 </html>
