@@ -4,62 +4,111 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Trang cá nhân — Trọng | Đại học Đại Nam</title>
-  <meta name="description" content="Trang cá nhân của Trọng — sinh viên Công nghệ thông tin tại Đại học Đại Nam." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a2e0c66a7c.js" crossorigin="anonymous"></script>
   <style>
     :root {
-      --accent: #0ea5a4;
-      --bg: #f8fafc;
+      --accent: #4f46e5;
       --text: #0f172a;
-      --card: #ffffff;
-      --muted: #6b7280;
+      --card: rgba(255, 255, 255, 0.8);
+      --muted: #475569;
       --radius: 14px;
     }
+
+    /* Nền gradient rực rỡ */
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f0f9ff, #ffffff);
       color: var(--text);
+      background: linear-gradient(120deg, #7dd3fc, #a78bfa, #f9a8d4);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    /* Bong bóng ánh sáng */
+    .bubble {
+      position: absolute;
+      background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float 10s infinite;
+    }
+
+    .bubble:nth-child(1) { width: 220px; height: 220px; top: 10%; left: 10%; animation-delay: 0s; }
+    .bubble:nth-child(2) { width: 300px; height: 300px; top: 50%; left: 70%; animation-delay: 3s; }
+    .bubble:nth-child(3) { width: 160px; height: 160px; top: 75%; left: 25%; animation-delay: 6s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(-25px); opacity: 0.9; }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .wrap {
       max-width: 1000px;
-      margin: 32px auto;
+      margin: 50px auto;
       padding: 24px;
+      position: relative;
+      z-index: 2;
     }
+
     header {
       display: flex;
       align-items: center;
       gap: 20px;
+      color: white;
     }
+
     .avatar {
       width: 96px;
       height: 96px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--accent), #7dd3fc);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: white;
       font-weight: 700;
-      font-size: 28px;
+      font-size: 32px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
     }
-    h1 { margin: 0; font-size: 28px; }
-    p.lead { margin: 6px 0 0; color: var(--muted); }
-    nav { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    h1 { margin: 0; font-size: 30px; }
+    p.lead { margin: 6px 0 0; color: #f1f5f9; }
+
+    nav {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     a.btn {
       background: var(--card);
       padding: 8px 12px;
       border-radius: 10px;
       text-decoration: none;
       color: var(--accent);
-      border: 1px solid rgba(14,165,164,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
       font-weight: 600;
-      transition: 0.2s;
+      transition: all 0.25s;
     }
-    a.btn:hover { background: var(--accent); color: #fff; }
+
+    a.btn:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
 
     .grid {
       display: grid;
@@ -67,39 +116,82 @@
       gap: 24px;
       margin-top: 22px;
     }
+
     .card {
       background: var(--card);
+      backdrop-filter: blur(12px);
       padding: 20px;
       border-radius: var(--radius);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     .skills { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill {
-      background: #ecfeff;
+      background: #eef2ff;
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 13px;
       color: var(--accent);
-      border: 1px solid rgba(14,165,164,0.2);
+      border: 1px solid rgba(99,102,241,0.2);
     }
 
-    .proj { margin-top: 12px; }
-    .proj h3 { margin: 0; color: var(--accent); }
-    .proj p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+    /* Form liên hệ */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
 
-    footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 13px; }
+    input, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+    }
 
-    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    textarea { resize: vertical; min-height: 80px; }
+
+    button {
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #4338ca;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      color: white;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
   <div class="wrap">
     <header>
       <div class="avatar">T</div>
       <div>
         <h1>Trọng — Sinh viên Đại học Đại Nam</h1>
-        <p class="lead">Mình đam mê <strong>lập trình</strong> và <strong>thiết kế web</strong>. Mục tiêu: trở thành nhà phát triển web chuyên nghiệp.</p>
+        <p class="lead">Đam mê lập trình và thiết kế web. Mục tiêu: trở thành lập trình viên chuyên nghiệp.</p>
         <nav>
           <a class="btn" href="#about">Giới thiệu</a>
           <a class="btn" href="#projects">Dự án</a>
@@ -112,7 +204,9 @@
       <main>
         <section id="about" class="card">
           <h2>Giới thiệu</h2>
-          <p>Xin chào! Mình là <strong>Trọng</strong>, sinh viên ngành <strong>Công nghệ thông tin</strong> tại <strong>Trường Đại học Đại Nam</strong>. Mình yêu thích khám phá công nghệ mới, thiết kế giao diện web và tối ưu trải nghiệm người dùng.</p>
+          <p>Mình là <strong>Trọng</strong>, sinh viên ngành <strong>Công nghệ thông tin</strong> tại <strong>Trường Đại học Đại Nam</strong>.  
+          Mình yêu thích lập trình web, thiết kế giao diện và luôn muốn tạo ra sản phẩm sáng tạo, thân thiện với người dùng.</p>
+
           <h3>Kỹ năng</h3>
           <div class="skills">
             <span class="skill">HTML</span>
@@ -120,43 +214,40 @@
             <span class="skill">JavaScript</span>
             <span class="skill">Python</span>
             <span class="skill">Git</span>
-            <span class="skill">Responsive Design</span>
           </div>
         </section>
 
         <section id="projects" class="card">
           <h2>Dự án</h2>
-          <div class="proj">
-            <h3>Website lớp học</h3>
-            <p>Trang giới thiệu lớp học với lịch, thành viên và tài liệu. Mình phụ trách giao diện và responsive.</p>
-          </div>
-          <div class="proj">
-            <h3>Hệ thống quản lý đồ án</h3>
-            <p>Prototype cho phép giảng viên và sinh viên quản lý đề tài, nộp file và phản hồi.</p>
-          </div>
+          <p>• Website lớp học với giao diện hiện đại, dễ sử dụng.<br>
+             • Hệ thống quản lý đồ án cho sinh viên CNTT.<br>
+             • Portfolio cá nhân hiển thị kỹ năng và dự án.</p>
         </section>
 
         <section id="contact" class="card">
           <h2>Liên hệ</h2>
-          <p>Bạn có thể liên hệ với mình qua các nền tảng sau:</p>
+          <p>Bạn có thể kết nối với mình qua:</p>
           <p>
             <a href="https://facebook.com/trong.nguyen" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
             <a href="mailto:trong@gmail.com" class="btn"><i class="fas fa-envelope"></i> Gmail</a>
           </p>
+
+          <h3>Hoặc gửi tin nhắn trực tiếp:</h3>
+          <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Tin nhắn đã được gửi.');">
+            <input type="text" placeholder="Họ và tên" required>
+            <input type="email" placeholder="Email của bạn" required>
+            <textarea placeholder="Nội dung liên hệ..." required></textarea>
+            <button type="submit">Gửi liên hệ</button>
+          </form>
         </section>
       </main>
 
       <aside>
         <div class="card">
-          <h3>Thông tin</h3>
+          <h3>Thông tin nhanh</h3>
           <p><strong>Trường:</strong> Đại học Đại Nam</p>
           <p><strong>Ngành:</strong> Công nghệ thông tin</p>
-          <p><strong>Sở thích:</strong> Lập trình, thiết kế web, khám phá công nghệ</p>
-          <p><strong>Liên kết cá nhân:</strong></p>
-          <p>
-            <a href="https://facebook.com/trong.nguyen" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="mailto:trong@gmail.com" class="btn"><i class="fas fa-envelope"></i> Gmail</a>
-          </p>
+          <p><strong>Sở thích:</strong> Lập trình, thiết kế, nghe nhạc</p>
         </div>
       </aside>
     </div>
